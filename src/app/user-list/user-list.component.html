@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <h2 class="text-center">User List</h2>
+    <div class="text-end mb-3">
+    <button (click)="addNewUser()" class="btn btn-success">Add New Person</button>
+    </div>
+    <table class="table table-bordered mt-4">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Full Name</th>
+          <th>Last Name</th>
+          <th>Address</th>
+          <th>Occupation</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userList; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.fullName }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.address }}</td>
+          <td>{{ user.occupation }}</td>
+          <td>
+            <button routerLink="/user-details/{{ i }}" class="btn btn-info btn-sm">View Details</button>
+            <button (click)="editUser(i)" class="btn btn-warning btn-sm">Edit</button>
+            <button (click)="deleteUser(i)" class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="userList.length === 0" class="text-center">
+      <p>No users registered yet.</p>
+    </div>
+  </div>
+  

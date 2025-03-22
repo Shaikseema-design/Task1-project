@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    <h2 class="text-center">Mechanic Details</h2>
+    <div *ngIf="mechanic">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Name: {{ mechanic.fullName }}</h5>
+          <p class="card-text"><strong>Last Name:</strong> {{ mechanic.lastName }}</p>
+          <p class="card-text"><strong>Address:</strong> {{ mechanic.address }}</p>
+          <p class="card-text"><strong>Occupation:</strong> {{ mechanic.occupation }}</p>
+          <button class="btn btn-primary mt-3" routerLink="/mechanic-list">Back to Mechanic List</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

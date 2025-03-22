@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <h2 class="text-center">User Details</h2>
+    <div *ngIf="user">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Full Name: {{ user.fullName }}</h5>
+          <p class="card-text"><strong>Last Name:</strong> {{ user.lastName }}</p>
+          <p class="card-text"><strong>Address:</strong> {{ user.address }}</p>
+          <p class="card-text"><strong>Occupation:</strong> {{ user.occupation }}</p>
+          <button class="btn btn-primary mt-3" routerLink="/user-list">Back to User List</button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!user" class="text-center">
+      <p>No user details found!</p>
+      <button class="btn btn-secondary mt-3" routerLink="/user-list">Back to User List</button>
+    </div>
+  </div>
+  
