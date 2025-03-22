@@ -6,14 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  userList: any[] = []; // Holds the list of users
+  userList: any[] = []; // arry for the list of users
 
   constructor() {}
 
   ngOnInit(): void {
     const storedUsers = localStorage.getItem('users');
     if (storedUsers) {
-      this.userList = JSON.parse(storedUsers); // Parse and store users data
+      this.userList = JSON.parse(storedUsers); // store users data
     }
   }
   // Method to add a new user
@@ -24,7 +24,7 @@ export class UserListComponent implements OnInit {
     const occupation = prompt('Enter occupation:');
 
     if (fullName && lastName && address && occupation) {
-      const newUser = { fullName, lastName, address, occupation }; // Create new user object
+      const newUser = { fullName, lastName, address, occupation }; 
       this.userList.push(newUser); // Add new user to the list
       localStorage.setItem('users', JSON.stringify(this.userList)); // Update local storage
       alert('New person added successfully!');

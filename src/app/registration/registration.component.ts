@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class RegistrationComponent {
   formData: any = { name: '', email: '', phone: '', password: '' };
-
+//whenever we click the register button the information stored into the localstorage  
   register(): void {
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     users.push(this.formData);
